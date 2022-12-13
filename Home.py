@@ -12,12 +12,12 @@ st.markdown("""
 """,unsafe_allow_html=True)
 ################################################
 
-
-st.markdown("# Home")
+st.image("nurse.png")
 #st.sidebar.markdown("# Home")
 
 #st.header("간호 사정 예측 앱")
 st.write("this is home.")
+
 
 st.markdown("""
     <a href ='/Tutorial' target='_self'>click to tutorial </a><br>

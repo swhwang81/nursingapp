@@ -16,3 +16,6 @@ st.markdown("# Nursing.")
 #st.sidebar.markdown("# Patents Info") 
 
 st.write("this is nursing.")
+
+# text processing and text mining
+# chart

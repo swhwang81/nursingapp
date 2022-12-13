@@ -12,10 +12,9 @@ st.markdown("""
 """,unsafe_allow_html=True)
 ################################################
 
-st.markdown("# my page.")
+st.markdown("# my statistics.")
 #st.sidebar.markdown("# Patents Info") 
 
-st.write("this is my page.")
+st.write("this is my statistics.")
 
-# input form
-# db insert, update and delete
+# chart with data loaed from db

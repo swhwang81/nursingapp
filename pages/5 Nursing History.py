@@ -16,3 +16,5 @@ st.markdown("# Nursing History.")
 #st.sidebar.markdown("# Patents Info") 
 
 st.write("this is nursing history.")
+
+# frexable dynamic components with data loaded from db

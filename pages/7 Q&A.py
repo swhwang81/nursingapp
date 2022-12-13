@@ -16,3 +16,5 @@ st.markdown("# Q & A.")
 #st.sidebar.markdown("# Patents Info") 
 
 st.write("this is Q&A.")
+
+# 계시판 포함
