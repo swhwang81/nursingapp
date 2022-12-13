@@ -20,9 +20,9 @@ st.markdown("# Home")
 st.write("this is home.")
 
 st.markdown("""
-    <a href ='/Tutorial'>click to tutorial </a><br>
+    <a href ='/Tutorial' target='_self'>click to tutorial </a><br>
     <a href="javascript:alert('Hello World!');">Execute JavaScript</a>
 """, unsafe_allow_html=True)
 
-
+#components.iframe("https://swhwang81-streamlitapp-app-7uz08y.streamlit.app/")
 
