@@ -11,9 +11,6 @@ st.markdown("""
 </style>
 """,unsafe_allow_html=True)
 ################################################
-
-
-#st.sidebar.markdown("# Tutorial")
 css_example = '''  
                                                                                                                                                    
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">                                                                                                                                                                                                                                                                                                              
@@ -22,7 +19,10 @@ css_example = '''
                                                                                                                                                                       
 '''
 st.write(css_example, unsafe_allow_html=True)
-st.markdown("# Tutorial")
-st.write("this is tutorial.")
+st.markdown("# my page.")
+#st.sidebar.markdown("# Patents Info") 
 
-# for ppt display !
+st.write("this is my page.")
+
+# input form
+# db insert, update and delete

@@ -12,17 +12,14 @@ st.markdown("""
 """,unsafe_allow_html=True)
 ################################################
 
-
-#st.sidebar.markdown("# Tutorial")
-css_example = '''  
-                                                                                                                                                   
+css_example = '''                                                                                                                                                     
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">                                                                                                                                                                                                                                                                                                              
-<a href ='/' target='_self'><i class="fas fa-home" style='font-size:36px;color:slategray;'></i> </a>   
-<a href ='/login' target='_self'><i class="fas fa-user-circle" style='font-size:36px;color:slategray; float:right;'></i> </a>  
-                                                                                                                                                                      
+<a href ='/' target='_self'><i class="fas fa-home" style='font-size:36px;color:slategray;'></i> </a>                                                                                                                                                                         
 '''
 st.write(css_example, unsafe_allow_html=True)
-st.markdown("# Tutorial")
-st.write("this is tutorial.")
+st.header("Login")
 
-# for ppt display !
+with st.form(key='my_form'):
+    username = st.text_input('Username')
+    password = st.text_input('Password')
+    st.form_submit_button('Login')

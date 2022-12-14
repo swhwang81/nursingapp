@@ -11,7 +11,14 @@ st.markdown("""
 </style>
 """,unsafe_allow_html=True)
 ################################################
-
+css_example = '''  
+                                                                                                                                                   
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">                                                                                                                                                                                                                                                                                                              
+<a href ='/' target='_self'><i class="fas fa-home" style='font-size:36px;color:slategray;'></i> </a>   
+<a href ='/login' target='_self'><i class="fas fa-user-circle" style='font-size:36px;color:slategray; float:right;'></i> </a>  
+                                                                                                                                                                      
+'''
+st.write(css_example, unsafe_allow_html=True)
 st.markdown("# Nursing.")
 #st.sidebar.markdown("# Patents Info") 
 
