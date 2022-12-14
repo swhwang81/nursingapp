@@ -23,6 +23,8 @@ css_example = '''
 '''
 st.write(css_example, unsafe_allow_html=True)
 st.markdown("# Tutorial")
-st.write("this is tutorial.")
 
 # for ppt display !
+st.markdown("""
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vT5FBGDR4azhOdSD_JIGGHIB7o-WNQjjfw_8uAaJeVrixU0cjQdpzhRwBWJ_KEs9bOkjoTA5lyHS0pf/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" width=50%></iframe>
+""",unsafe_allow_html=True)

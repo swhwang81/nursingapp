@@ -19,10 +19,14 @@ css_example = '''
                                                                                                                                                                       
 '''
 st.write(css_example, unsafe_allow_html=True)
-st.markdown("# Nursing.")
+
 #st.sidebar.markdown("# Patents Info") 
 
-st.write("this is nursing.")
+col1, col2 =st.columns(2)
+with col1:
+    st.write("# Nursing.")
+with col2:
+    st.image("medical.png", width= 100)
 
 # text processing and text mining
 # chart

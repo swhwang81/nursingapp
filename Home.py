@@ -21,8 +21,7 @@ css_example = '''
                                                                                                                                                                       
 '''
 st.write(css_example, unsafe_allow_html=True)
-st.header("Home")
-st.write("this is home.")
+st.write("# Home")
 
 
 st.markdown("""
@@ -65,6 +64,5 @@ st.markdown("""
     </ul>
     </center>
 """, unsafe_allow_html=True)
-
 
 

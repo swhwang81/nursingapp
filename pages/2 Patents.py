@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import pickle
 import streamlit.components.v1 as components  # Import Streamlit
+import datetime
 
 ##remove a streamlit default header list########
 st.markdown("""
@@ -19,58 +20,59 @@ css_example = '''
                                                                                                                                                                       
 '''
 st.write(css_example, unsafe_allow_html=True)
-st.markdown("# Patents Info.")
+st.markdown("# Patents")
 #st.sidebar.markdown("# Patents Info") 
 
-st.write("this is patents info.")
 
 # input widgets and database usages
-st.write("#### 환자 정보를 입력하세요.")
+st.write("1 ~ 3 탭의 환자 정보를 입력하세요.")
 
-col1,col2 = st.columns(2)
-
-#이름
-with col1:
-    name = st.text_input('이름: ', '홍길동')
+tab1, tab2, tab3 = st.tabs(['1.인적사항','2.수술전후 사항','3.그 외'])
+with tab1:
+   
+    #이름 
+    name = st.text_input('① 이름: ', '홍길동')
     st.write('이름: ', name)
-with col2: #성별
-    sex = st.selectbox('성별: ', ['남성', '여성'])
+    #성별
+    sex = st.selectbox('② 성별: ', ['남성', '여성'])
     st.write('성별: ', sex)
-
-col3,col4 = st.columns(2)
-with col3:  
-    age = st.slider('나이', 0, 110, 25)
+    #나이
+    age = st.slider('③ 나이', 0, 110, 25)
     st.write("나이: ", age, ' 세')
-with col4:
-    period = st.slider('입원기간', 0, 60, 3)
-    st.write("입원기간: ", period, ' 일')
+    #입원날짜
+    today = datetime.date.today()
+    d = st.date_input("④ 입원날짜: ",today)
+    st.write("입원날짜: ",d)
+    period = abs(today - d)
+    st.write("기간: ", period.days)
 
-col5,col6 =st.columns(2)
-with col5:
-    option = st.selectbox('HCC 유형: ', ['1', '2','3','4'])
+with tab2:
+    #HCC 유형
+    option = st.selectbox('⑤ HCC 유형: ', ['1', '2','3','4'])
     st.write('HCC 유형: ', option)
-with col6:
-    yes = st.radio("간경화 여부: ",("yes","no"))
+    #간경화 여부
+    yes = st.radio("⑥ 간경화 여부: ",("yes","no"))
     if yes =='yes':
         st.write("간경화 있음.")
     else:
         st.write("간경화 없음.")
-
-col7,col8 =st.columns(2)
-with col7:
-    st.write("TACE 차수: ")
+    #TACE 차수
+    st.write("⑦ TACE 차수: ")
     option = st.selectbox('TACE 차수: ', ['1', '2','3','4'])
     st.write('TACE 차수: ', option)
-with col8:
-    st.write("TACE 유형: ")
+    #TACE 유형
+    st.write("⑧ TACE 유형: ")
     option = st.selectbox('TACE 유형: ', ['1', '2','3','4'])
     st.write('TACE 유형: ', option)
+    
+with tab3:
+    #환자 사정
+    txt = st.text_area('⑨ 환자의 사정 내용을 입력하세요: ', '''
+        예, 오심, 구토 있음, 발열 없음
+        ''')
+    st.write('Sentiment:',str(txt))
 
-txt = st.text_area('환자의 사정 내용을 입력하세요: ', '''
-    예, 오심, 구토 있음, 발열 없음
-    ''')
-st.write('Sentiment:',str(txt))
-
+#st.write("⑩ ⑪ ⑫ ⑬ ⑭ ⑮ ⑯ ⑰ ⑱ ⑲ ⑳ ㉑ ㉒ ㉓ ㉔")
 
 if st.button('저장'):
      st.write(name, age, sex, period, option, txt)
