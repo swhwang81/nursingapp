@@ -21,7 +21,6 @@ css_example = '''
                                                                                                                                                                       
 '''
 st.write(css_example, unsafe_allow_html=True)
-st.write("# Home")
 
 
 st.markdown("""
