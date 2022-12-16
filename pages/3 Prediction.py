@@ -24,11 +24,9 @@ st.write(css_example, unsafe_allow_html=True)
 #st.markdown("""
 #    <span style ='font-size:34px; font-weight: bold;'> Predict  </span>
 #""", unsafe_allow_html=True)
-col1, col2 = st.columns(2)
-with col1:
-    st.write("# Prediction")
-with col2:
-    st.image('icon01.png', width=100)
+
+st.write("# Prediction")
+
 
 st.write("this is prediction.")
 st.write("this is to apply a machine learning model. currently this model is for iris classification.")
@@ -38,14 +36,14 @@ tab1, tab2, tab3 = st.tabs(['1.dataset','2.test_data','3.result'])
 
 with tab1:
     st.write("## dataset")
-    data = pd.read_csv("iris.csv")
+    data = pd.read_csv("iris_data.csv")
     data
 
 with tab2:
     st.write("## model test")
 
-    model = pickle.load(open('iri.pkl','rb'))
-    arr = np.array([[5.9,3.0,5.0,1.8]])
+    model = pickle.load(open('iri_rf.pkl','rb'))
+    arr = np.array([[5.1,3.5,1.4,0.2]])
     st.write(arr)
 
 with tab3:
@@ -54,8 +52,8 @@ with tab3:
 
 
     if pred == 0:
-        st.write("### predict result: ... Setosa !!",  str(pred[0]))
+        st.write("### predict result: Setosa !!",  str(pred[0]))
     elif pred == 1:
-        st.write("### predict result: ... Versicolor !!", str(pred[0]))
+        st.write("### predict result: Versicolor !!", str(pred[0]))
     elif pred == 2:
-        st.write("### predict result: ... Virginica !!",  str(pred[0]))
+        st.write("### predict result: Virginica !!",  str(pred[0]))

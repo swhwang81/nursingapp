@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import pickle
 import streamlit.components.v1 as components  # Import Streamlit
+import mysql.connector
 
 ##remove a streamlit default header list########
 st.markdown("""
@@ -22,11 +23,28 @@ st.write(css_example, unsafe_allow_html=True)
 
 #st.sidebar.markdown("# Patents Info") 
 
-col1, col2 =st.columns(2)
-with col1:
-    st.write("# Nursing.")
-with col2:
-    st.image("medical.png", width= 100)
+
+st.write("# Nursing.")
+
 
 # text processing and text mining
-# chart
+
+@st.experimental_singleton
+def init_connection():
+    return mysql.connector.connect(**st.secrets["mysql"])
+
+conn = init_connection()
+
+# Perform query.
+# Uses st.experimental_memo to only rerun when the query changes or after 10 min.
+@st.experimental_memo(ttl=600)
+def run_query(query):
+    with conn.cursor() as cur:
+        cur.execute(query)
+        return cur.fetchall()
+
+rows = run_query("SELECT * from topic;")
+
+# Print results.
+for row in rows:
+    st.write(f"{row[0]} has a :{row[1]}:")
