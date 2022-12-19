@@ -27,33 +27,18 @@ st.write(css_example, unsafe_allow_html=True)
 
 st.write("# Prediction")
 
-
 st.write("this is prediction.")
-st.write("this is to apply a machine learning model. currently this model is for iris classification.")
-st.write("But, I'll change a model for my nursing app, soon.")
 
-tab1, tab2, tab3 = st.tabs(['1.dataset','2.test_data','3.result'])
 
-with tab1:
-    st.write("## dataset")
-    data = pd.read_csv("iris_data.csv")
-    data
+st.write("## dataset")
+data = pd.read_csv("nurse_selected.csv")
+data
 
-with tab2:
-    st.write("## model test")
-
-    model = pickle.load(open('iri_rf.pkl','rb'))
-    arr = np.array([[5.1,3.5,1.4,0.2]])
-    st.write(arr)
-
-with tab3:
+st.write("## model test")
+model = pickle.load(open('nurse.pkl','rb'))
+arr = np.array([[0.41,0.021,-0.29,-0.11,1.5,0.2,0.,1.,0.,1.01,0.14,0.25]])
+st.write(arr)
     
-    pred = model.predict(arr)    
+pred = model.predict(arr)    
 
-
-    if pred == 0:
-        st.write("### predict result: Setosa !!",  str(pred[0]))
-    elif pred == 1:
-        st.write("### predict result: Versicolor !!", str(pred[0]))
-    elif pred == 2:
-        st.write("### predict result: Virginica !!",  str(pred[0]))
+st.write(pred)
